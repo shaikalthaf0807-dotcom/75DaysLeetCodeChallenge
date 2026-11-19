@@ -9,21 +9,16 @@ class Solution {
                 char ch=s.charAt(i);
                 if(Character.isLetterOrDigit(ch)){
                     newString+=s.valueOf(ch);
-                }else{
-                    continue;
                 }
             }
-            char[] arr=newString.toCharArray();
             int start=0;
-            int end=arr.length-1;
+            int end=newString.length()-1;
             while(start<end){
-                if(arr[start]==arr[end]){
-                    start++;
-                    end--;
-                    continue;
-                }else{
+                if(newString.charAt(start)!=newString.charAt(end)){
                     return false;
                 }
+                start++;
+                end--;
             }
         }
         return true;
